@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk = 34
+    defaultConfig {
+        applicationId "edu.cmu.sphinx.pocketsphinx"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.1"
+    }
+}
+
+dependencies {
+    implementation("com.google.android.material:material:1.8.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(files("libs\\cmu_time_awb.jar"))
+    implementation(files("libs\\cmu_us_kal.jar"))
+    implementation(files("libs\\cmudict04.jar"))
+    implementation(files("libs\\cmulex.jar"))
+    implementation(files("libs\\cmutimelex.jar"))
+    implementation(files("libs\\en_us.jar"))
+    implementation(files("libs\\freetts.jar"))
+    implementation(files("libs\\freetts-jsapi10.jar"))
+    implementation(files("libs\\jsapi.jar"))
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation project(':aars')
+    implementation project(':models')
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    //noinspection GradleCompatible
+    implementation ('com.android.support:appcompat-v7:26.1.0')
+}
